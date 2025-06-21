@@ -1,0 +1,117 @@
+{
+  "user": {
+    "id": 1,
+    "name": "Mark Henry",
+    "availableBalance": 3000,
+    "currency": "S$"
+  },
+  "debitCard": {
+    "id": 1,
+    "userId": 1,
+    "cardHolderName": "Mark Henry",
+    "cardNumber": "5647341324132020",
+    "cvv": "456",
+    "expiryDate": "12/20",
+    "isActive": true,
+    "cardType": "VISA"
+  },
+  "spendingLimit": {
+    "item": {
+      "item": {
+        "item": {
+          "item": {
+            "id": 1,
+            "userId": 1,
+            "weeklyLimit": 5000,
+            "currentSpending": 345,
+            "isActive": true,
+            "lastUpdated": "2024-01-15T10:30:00Z"
+          },
+          "weeklyLimit": 10000,
+          "isActive": true,
+          "lastUpdated": "2025-06-20T21:24:21.860Z"
+        },
+        "weeklyLimit": 5000,
+        "isActive": true,
+        "lastUpdated": "2025-06-20T21:24:30.042Z"
+      },
+      "weeklyLimit": 5000,
+      "isActive": true,
+      "lastUpdated": "2025-06-20T21:25:28.257Z"
+    },
+    "weeklyLimit": 5000,
+    "isActive": true,
+    "lastUpdated": "2025-06-20T21:25:43.571Z"
+  },
+  "transactions": [
+    {
+      "id": "1",
+      "userId": 1,
+      "amount": 125,
+      "description": "Coffee Shop",
+      "date": "2024-01-15T08:30:00Z",
+      "type": "debit",
+      "category": "Food & Dining",
+      "merchant": "Starbucks"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "amount": 120,
+      "description": "Grocery Store",
+      "date": "2024-01-14T16:45:00Z",
+      "type": "debit",
+      "category": "Groceries",
+      "merchant": "FairPrice"
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "amount": 100,
+      "description": "Gas Station",
+      "date": "2024-01-13T12:20:00Z",
+      "type": "debit",
+      "category": "Transportation",
+      "merchant": "Shell"
+    }
+  ],
+  "cardSettings": [
+    {
+      "id": "1",
+      "title": "Top-up account",
+      "description": "Deposit money to your account to use with card",
+      "type": "topup",
+      "isEnabled": true
+    },
+    {
+      "id": "2",
+      "title": "Weekly spending limit",
+      "description": "You haven't set any spending limit on card",
+      "type": "spending_limit",
+      "isEnabled": false,
+      "hasSwitch": true
+    },
+    {
+      "id": "3",
+      "title": "Freeze card",
+      "description": "Your debit card is currently active",
+      "type": "freeze_card",
+      "isEnabled": false,
+      "hasSwitch": true
+    },
+    {
+      "id": "4",
+      "title": "Get a new card",
+      "description": "This deactivates your current debit card",
+      "type": "new_card",
+      "isEnabled": true
+    },
+    {
+      "id": "5",
+      "title": "Deactivated cards",
+      "description": "Your previously deactivated cards",
+      "type": "deactivated_cards",
+      "isEnabled": true
+    }
+  ]
+}

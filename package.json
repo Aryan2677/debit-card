@@ -7,11 +7,31 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "test:sagas": "jest --testPathPattern=\"dashboardSaga.test.ts|spendingLimitSaga.test.ts\" --verbose",
+    "format": "prettier --write .",
+    "mock-api": "json-server --watch mock-data/db.json --port 3001 --host 0.0.0.0",
+    "dev": "concurrently \"npm run mock-api\" \"npm start\""
   },
   "dependencies": {
+    "@gorhom/bottom-sheet": "^5.1.6",
+    "@react-navigation/bottom-tabs": "^7.3.17",
+    "@react-navigation/native": "^7.1.13",
+    "@react-navigation/native-stack": "^7.3.18",
+    "@reduxjs/toolkit": "^2.8.2",
+    "axios": "^1.10.0",
+    "json-server": "^1.0.0-beta.3",
     "react": "19.0.0",
-    "react-native": "0.79.2"
+    "react-native": "0.79.2",
+    "react-native-gesture-handler": "^2.26.0",
+    "react-native-raw-bottom-sheet": "^3.0.0",
+    "react-native-reanimated": "^3.18.0",
+    "react-native-safe-area-context": "^5.4.1",
+    "react-native-screens": "^4.11.1",
+    "react-native-svg": "^15.12.0",
+    "react-native-vector-icons": "^10.2.0",
+    "react-redux": "^9.2.0",
+    "redux-saga": "^1.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -27,9 +47,11 @@
     "@types/jest": "^29.5.13",
     "@types/react": "^19.0.0",
     "@types/react-test-renderer": "^19.0.0",
+    "concurrently": "^9.1.2",
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
-    "prettier": "2.8.8",
+    "prettier": "^2.8.8",
+    "react-native-svg-transformer": "^1.5.1",
     "react-test-renderer": "19.0.0",
     "typescript": "5.0.4"
   },
