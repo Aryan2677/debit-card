@@ -216,53 +216,6 @@ npx react-native run-ios --simulator="iPhone 14"
    npx react-native run-ios --device
    ```
 
-## 📦 Building for Production
-
-### Android APK/AAB
-
-#### Debug APK (for testing)
-
-```bash
-cd android
-./gradlew assembleDebug
-# APK location: android/app/build/outputs/apk/debug/app-debug.apk
-```
-
-#### Release APK
-
-```bash
-# Generate signing key (first time only)
-keytool -genkeypair -v -storetype PKCS12 -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
-
-# Build release APK
-cd android
-./gradlew assembleRelease
-# APK location: android/app/build/outputs/apk/release/app-release.apk
-```
-
-#### Android App Bundle (for Play Store)
-
-```bash
-cd android
-./gradlew bundleRelease
-# AAB location: android/app/build/outputs/bundle/release/app-release.aab
-```
-
-### iOS Build (macOS only)
-
-#### iOS Simulator Build
-
-```bash
-npx react-native run-ios --configuration Release
-```
-
-#### iOS Device/App Store Build
-
-1. Open `ios/FirstProject.xcworkspace` in Xcode
-2. Select "Any iOS Device" or your connected device
-3. Product → Archive
-4. Follow Xcode's distribution workflow
-
 ## 🧪 Testing
 
 ### Run All Tests
@@ -318,51 +271,9 @@ The mock API server (`mock-data/db.json`) contains:
 
 ## 🔍 Troubleshooting
 
-### Common Issues
-
-#### Metro Bundler Issues
-
-```bash
-# Reset Metro cache
-npx react-native start --reset-cache
-
-# Kill existing Metro process
-lsof -ti:8081 | xargs kill -9
-```
-
-#### Android Build Issues
-
-```bash
-# Clean Android build
-cd android && ./gradlew clean && cd ..
-
-# Reset packages
-rm -rf node_modules && npm install
-```
-
-#### iOS Build Issues (macOS only)
-
-```bash
-# Clean iOS build
-cd ios && xcodebuild clean && cd ..
-
-# Reinstall pods
-cd ios && rm -rf Pods && pod install && cd ..
-```
-
 #### Network Issues
 
 - Ensure your device/emulator can reach the mock server
 - Check firewall settings
 - Verify IP address configuration in `api.ts`
 - Test API accessibility: `curl http://YOUR_IP:3001/user`
-
-### Port Conflicts
-
-```bash
-# Kill process on port 3001 (mock server)
-lsof -ti:3001 | xargs kill -9
-
-# Kill process on port 8081 (Metro)
-lsof -ti:8081 | xargs kill -9
-```
